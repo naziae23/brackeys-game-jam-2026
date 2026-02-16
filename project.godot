@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="brackeys-game-jam-2026"
-<<<<<<< HEAD
 run/main_scene="uid://ddw73j807lyq1"
-=======
-run/main_scene="uid://bth233cpatd2t"
->>>>>>> 3e0fcfb8be98254150c3e5d34f14b9cade81dd71
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="uid://ddw73j807lyq1"
 
 [physics]
 
