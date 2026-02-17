@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhla4iu14jv8y"]
+
+[ext_resource type="Texture2D" uid="uid://dxmt66vqgm3id" path="res://assets/Godot Tutorial/sprites/platforms.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(30, 7)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=482076114]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=891429809]
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(15.765282, 47.467373, 32.92135, 10.4461975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957956933]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nlgqw")
+one_way_collision = true
