@@ -1174,7 +1174,7 @@ sources/2 = SubResource("TileSetAtlasSource_dinhu")
 sources/4 = SubResource("TileSetAtlasSource_kvuet")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
-distance = -130.0
+distance = -346.0
 
 [node name="Game" type="Node2D" unique_id=1923879512]
 
@@ -1193,7 +1193,7 @@ layer_1/tile_data = PackedInt32Array(131057, 4, 0, 196593, 4, 1, 262129, 4, 2, 3
 [node name="Player" parent="." unique_id=854190572 instance=ExtResource("1_uwrxv")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1296301348]
-offset = Vector2(0, -20)
+offset = Vector2(0, -40)
 zoom = Vector2(3, 3)
 limit_bottom = 120
 
@@ -1210,27 +1210,36 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="Node2D" parent="." unique_id=391733326]
 z_index = -5
-position = Vector2(0, -135)
 
 [node name="Sky" type="Parallax2D" parent="Background" unique_id=958719718]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=416720557]
+scale = Vector2(1, 1.5028902)
 texture = ExtResource("8_kvpfn")
+centered = false
 
 [node name="Layer1" type="Parallax2D" parent="Background" unique_id=871384094]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Layer1" unique_id=1366551722]
 texture = ExtResource("9_dinhu")
+centered = false
 
 [node name="Layer2" type="Parallax2D" parent="Background" unique_id=441778671]
+scroll_scale = Vector2(0.25, 0.25)
+repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Layer2" unique_id=48095820]
 texture = ExtResource("10_kvuet")
+centered = false
 
 [node name="Killzone" parent="." unique_id=1528917466 instance=ExtResource("5_iywne")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=666397084]
+position = Vector2(-1, -214)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="Collectables" type="Node" parent="." unique_id=684343821]
