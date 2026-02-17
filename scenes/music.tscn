@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmefe828hnajf"]
 
-[ext_resource type="AudioStream" uid="uid://cp8tqtmooc66j" path="res://assets/music/time_for_adventure.mp3" id="1_05ggv"]
+[ext_resource type="AudioStream" uid="uid://cp8tqtmooc66j" path="res://assets/Godot Tutorial/music/time_for_adventure.mp3" id="1_05ggv"]
 
 [node name="Music" type="AudioStreamPlayer2D" unique_id=984775501]
 stream = ExtResource("1_05ggv")

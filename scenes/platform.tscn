@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhla4iu14jv8y"]
 
-[ext_resource type="Texture2D" uid="uid://dxmt66vqgm3id" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://dxmt66vqgm3id" path="res://assets/Godot Tutorial/sprites/platforms.png" id="1_ba0x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(30, 7)
