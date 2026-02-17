@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="brackeys-game-jam-2026"
-run/main_scene="uid://ddw73j807lyq1"
+run/main_scene="uid://dt2c1k33w5wp3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://ddw73j807lyq1"
@@ -22,4 +22,5 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
