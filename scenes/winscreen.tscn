@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c6bjuvplwwyrp"]
+
+[ext_resource type="FontFile" uid="uid://bxlysp4r2ewn2" path="res://assets/Godot Tutorial/fonts/PixelOperator8.ttf" id="1_47rfs"]
+[ext_resource type="Script" uid="uid://bw22u704c2t6x" path="res://scripts/menus/winscreen.gd" id="1_wg0yv"]
+
+[sub_resource type="GDScript" id="GDScript_unfcc"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Winscreen" type="Control" unique_id=1440398126]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wg0yv")
+
+[node name="Panel" type="Panel" parent="." unique_id=787702777]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 0.29595947
+
+[node name="WinText" type="PanelContainer" parent="." unique_id=283460339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -323.0
+offset_right = 577.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WinText" unique_id=127871660]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinText/MarginContainer" unique_id=555979318]
+layout_mode = 2
+
+[node name="WinText" type="Label" parent="WinText/MarginContainer/VBoxContainer" unique_id=2084234312]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_font_sizes/font_size = 48
+text = "You made it home safely"
+horizontal_alignment = 1
+
+[node name="Buttons" type="PanelContainer" parent="." unique_id=954955296]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -438.0
+offset_right = 150.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=1390894466]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Retry" type="MarginContainer" parent="Buttons/VBoxContainer" unique_id=993961788]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Retry" type="Button" parent="Buttons/VBoxContainer/Retry" unique_id=794620326]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_font_sizes/font_size = 30
+text = "Retry
+"
+script = SubResource("GDScript_unfcc")
+
+[node name="NextDay" type="MarginContainer" parent="Buttons/VBoxContainer" unique_id=603511786]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="NextDay" type="Button" parent="Buttons/VBoxContainer/NextDay" unique_id=225506187]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_font_sizes/font_size = 30
+text = "Next Day
+"
+
+[node name="MainMenu" type="MarginContainer" parent="Buttons/VBoxContainer" unique_id=308802205]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="MainMenu" type="Button" parent="Buttons/VBoxContainer/MainMenu" unique_id=463803894]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu
+
+"
+
+[connection signal="button_up" from="Buttons/VBoxContainer/Retry/Retry" to="." method="_on_retry_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/Retry/Retry" to="Buttons/VBoxContainer/Retry/Retry" method="_on_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/NextDay/NextDay" to="." method="_on_next_day_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/MainMenu/MainMenu" to="." method="_on_main_menu_button_up"]

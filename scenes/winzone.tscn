@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c4sctf2tdbm14"]
+
+[ext_resource type="Script" uid="uid://c6nnicwow3a5m" path="res://scripts/winzone.gd" id="1_jpvp6"]
+[ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="2_v2csi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2csi"]
+size = Vector2(30, 64)
+
+[node name="Winzone" type="Area2D" unique_id=304842765]
+collision_mask = 2
+script = ExtResource("1_jpvp6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1652524653]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648824090]
+texture = ExtResource("2_v2csi")
+hframes = 22
+vframes = 6
+frame = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797911979]
+shape = SubResource("RectangleShape2D_v2csi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
