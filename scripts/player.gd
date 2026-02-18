@@ -35,9 +35,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if !is_dashing and !can_dash:
 			can_dash = true
-			_update_dash_visuals()
 			
 	_dash_logic(delta)
+	_update_dash_visuals()
 	
 	move_and_slide()
 
@@ -80,7 +80,6 @@ func _dash_logic(delta: float) -> void:
 		is_dashing = true
 		dash_timer = DASH_TIME
 		
-		_update_dash_visuals()
 		velocity = final_dash_dir * DASH_VEL
 		
 	if is_dashing:
@@ -89,12 +88,10 @@ func _dash_logic(delta: float) -> void:
 			is_dashing = false
 			
 func _update_dash_visuals() -> void:
-	if can_dash:
-#		what to look like when can dash
-		pass
+	if is_dashing:
+		$GPUParticles2D.emitting = true
 	else:
-#		what to look like when cant dash
-		pass
+		$GPUParticles2D.emitting = false
 
 func die(play_anim: bool = true) -> void:
 	if dead:
@@ -105,10 +102,14 @@ func die(play_anim: bool = true) -> void:
 func animate(direction: int) -> void :
 	if direction > 0:
 		sprite.flip_h = false
+		$GPUParticles2D.scale.x = 1
 	elif direction < 0:
 		sprite.flip_h = true
-		
-	if is_on_floor():
+		$GPUParticles2D.scale.x = -1
+	
+	if is_dashing:
+			sprite.play("dash")	
+	elif is_on_floor():
 		if direction == 0:
 			sprite.play("idle")
 		else:
