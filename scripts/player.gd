@@ -93,8 +93,8 @@ func _dash_logic(delta: float) -> void:
 	if input_dir.x != 0:
 		dash_dir.x = input_dir.x
 	
-	if can_dash and (is_jumping and Input.is_action_just_pressed("jump") or 
-		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("jump"))):
+	if can_dash and (is_jumping and Input.is_action_just_pressed("dash") or 
+		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("dash"))):
 		var final_dash_dir: Vector2 = dash_dir
 		final_dash_dir.y = input_dir.y
 		if input_dir.y != 0 and input_dir.x == 0:
