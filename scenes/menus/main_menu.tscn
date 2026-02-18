@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1wcsssn1np25"]
 
-[ext_resource type="Script" uid="uid://oiwuwcqjqlcw" path="res://scenes/menus/main_menu.gd" id="1_ovrgc"]
+[ext_resource type="Script" uid="uid://oiwuwcqjqlcw" path="res://scripts/menus/main_menu.gd" id="1_ovrgc"]
 [ext_resource type="FontFile" uid="uid://k81yvl8577dj" path="res://assets/Godot Tutorial/fonts/PixelOperator8-Bold.ttf" id="1_xqga4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovrgc"]
