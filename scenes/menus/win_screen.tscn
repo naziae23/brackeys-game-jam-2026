@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6bjuvplwwyrp"]
 
-[ext_resource type="FontFile" uid="uid://bxlysp4r2ewn2" path="res://assets/Godot Tutorial/fonts/PixelOperator8.ttf" id="1_47rfs"]
-[ext_resource type="Script" uid="uid://bw22u704c2t6x" path="res://scripts/menus/winscreen.gd" id="1_wg0yv"]
+[ext_resource type="Script" uid="uid://bw22u704c2t6x" path="res://scripts/menus/winscreen.gd" id="1_g0jqs"]
+[ext_resource type="FontFile" uid="uid://bxlysp4r2ewn2" path="res://assets/Godot Tutorial/fonts/PixelOperator8.ttf" id="2_oif6l"]
 
 [sub_resource type="GDScript" id="GDScript_unfcc"]
 script/source = "extends Button
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wg0yv")
+script = ExtResource("1_g0jqs")
 
 [node name="Panel" type="Panel" parent="." unique_id=787702777]
 layout_mode = 1
@@ -64,7 +64,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_fonts/font = ExtResource("2_oif6l")
 theme_override_font_sizes/font_size = 48
 text = "You made it home safely"
 horizontal_alignment = 1
@@ -100,7 +100,7 @@ theme_override_constants/margin_bottom = 15
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_fonts/font = ExtResource("2_oif6l")
 theme_override_font_sizes/font_size = 30
 text = "Retry
 "
@@ -116,7 +116,7 @@ theme_override_constants/margin_bottom = 15
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_fonts/font = ExtResource("2_oif6l")
 theme_override_font_sizes/font_size = 30
 text = "Next Day
 "
@@ -131,7 +131,7 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_47rfs")
+theme_override_fonts/font = ExtResource("2_oif6l")
 theme_override_font_sizes/font_size = 30
 text = "Main Menu
 

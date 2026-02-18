@@ -7,4 +7,4 @@ func _on_next_day_button_up() -> void:
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_main_menu_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")

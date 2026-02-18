@@ -1201,8 +1201,6 @@ offset = Vector2(0, -40)
 zoom = Vector2(3, 3)
 limit_bottom = 120
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1435939261]
-
 [node name="Background" type="Node2D" parent="." unique_id=391733326]
 z_index = -5
 
