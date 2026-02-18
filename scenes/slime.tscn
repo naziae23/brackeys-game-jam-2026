@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://be7eppxvq80tm"]
+[gd_scene format=3 uid="uid://cxfga8ftalp8d"]
 
 [ext_resource type="Texture2D" uid="uid://dlqndnj451cuf" path="res://assets/sprites/slime_green.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://c7sym3yv82p1" path="res://scripts/slime.gd" id="1_p2gj0"]
