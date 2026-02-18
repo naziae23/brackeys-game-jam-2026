@@ -14,8 +14,11 @@ var dash_timer: float = 0.0
 var is_jumping: bool = false
 var time_since_grounded = 0.0
 
+var is_gliding: bool = false
+
 @export var omnidash: bool = true;
 @export var coyoteTime: float = 0.1
+@export var glideGravityDecrease: float = 0.15
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -27,8 +30,6 @@ func _physics_process(delta: float) -> void:
 		time_since_grounded = 0
 		is_jumping = false
 	
-	if !is_dashing:
-		update_gravity(delta)
 	
 	var direction := Input.get_axis("move_left", "move_right")
 	_dash_logic(delta)
@@ -42,15 +43,19 @@ func _physics_process(delta: float) -> void:
 			can_dash = true
 			
 	_update_dash_visuals()
+	if !is_dashing:
+		update_gravity(delta)
 	
 	move_and_slide()
 
 func update_gravity(delta: float) -> void:
+	var grav_modifier = 1.0 if (!is_gliding and !is_dashing) else glideGravityDecrease
 	if not is_on_floor_coyote():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * grav_modifier
 	
 func update_movement(direction: float) -> void:
-	if Input.is_action_just_pressed("jump") and is_on_floor_coyote() and !Input.is_action_pressed("move_down"):
+	if (Input.is_action_just_pressed("jump") and is_on_floor_coyote() 
+	and !Input.is_action_pressed("move_down") and !is_gliding) :
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 	if direction:
@@ -61,6 +66,13 @@ func update_movement(direction: float) -> void:
 	if Input.is_action_just_released("jump"): #if released early
 		if velocity.y < -150:
 			velocity.y = -150
+			
+	if Input.is_action_pressed("glide"):
+		if is_jumping and !is_gliding:
+			is_gliding = true
+			velocity.y = 0
+	else:
+		is_gliding = false
 	
 func _dash_logic(delta: float) -> void:
 	var y_move: float = 0.0
@@ -92,6 +104,8 @@ func _dash_logic(delta: float) -> void:
 		dash_timer -= delta
 		if dash_timer <= 0.0:
 			is_dashing = false
+			if is_gliding:
+				velocity.y = 0
 			
 func _update_dash_visuals() -> void:
 	if is_dashing:
