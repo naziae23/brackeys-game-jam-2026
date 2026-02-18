@@ -10,12 +10,18 @@ var can_dash: bool = true
 var is_dashing: bool = true
 var dash_dir: Vector2 = Vector2.RIGHT
 var dash_timer: float = 0.0
+var dead: bool = false
 
 @export var omnidash: bool = true;
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	
+	if dead:
+		velocity += 1.75 * get_gravity() * delta
+		move_and_slide()
+		return
 	
 	if !is_dashing:
 		update_gravity(delta)
@@ -89,6 +95,12 @@ func _update_dash_visuals() -> void:
 	else:
 #		what to look like when cant dash
 		pass
+
+func die(play_anim: bool = true) -> void:
+	if dead:
+		return
+	dead = true
+	sprite.play("death")
 
 func animate(direction: int) -> void :
 	if direction >= 0:
