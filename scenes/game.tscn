@@ -1207,7 +1207,6 @@ z_index = -5
 
 [node name="Sky" type="Parallax2D" parent="Background" unique_id=958719718]
 scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(3, 0)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=416720557]
