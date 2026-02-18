@@ -103,7 +103,7 @@ func die(play_anim: bool = true) -> void:
 	sprite.play("death")
 
 func animate(direction: int) -> void :
-	if direction >= 0:
+	if direction > 0:
 		sprite.flip_h = false
 	elif direction < 0:
 		sprite.flip_h = true
