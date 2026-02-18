@@ -11,6 +11,7 @@ var is_dashing: bool = true
 var dash_dir: Vector2 = Vector2.RIGHT
 var dash_timer: float = 0.0
 
+@export var omnidash: bool = true;
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -51,11 +52,13 @@ func update_movement(direction: int) -> void:
 			velocity.y = -150
 	
 func _dash_logic(delta: float) -> void:
+	var y_move: float = 0.0
+	if omnidash:
+		y_move = Input.get_axis("move_up", "move_down")
 	
 	var input_dir: Vector2 = Vector2(
 		Input.get_axis("move_left", "move_right"),
-		Input.get_axis("move_up", "move_down") #omni dash
-		#0.0 #horizontal only
+		y_move
 	).normalized()
 	
 	if input_dir.x != 0:
