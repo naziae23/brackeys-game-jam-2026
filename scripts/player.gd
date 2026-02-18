@@ -91,7 +91,7 @@ func _update_dash_visuals() -> void:
 		pass
 
 func animate(direction: int) -> void :
-	if direction >= 0:
+	if direction > 0:
 		sprite.flip_h = false
 	elif direction < 0:
 		sprite.flip_h = true
