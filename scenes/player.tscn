@@ -10,10 +10,9 @@ particles_anim_v_frames = 8
 particles_anim_loop = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
-particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
-anim_offset_min = 0.6563
-anim_offset_max = 0.6563
+anim_offset_min = 0.28129998
+anim_offset_max = 0.28129998
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
 atlas = ExtResource("1_674bt")

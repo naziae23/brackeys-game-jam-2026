@@ -86,14 +86,14 @@ func _update_dash_visuals() -> void:
 		$GPUParticles2D.emitting = true
 	else:
 		$GPUParticles2D.emitting = false
-		
-	$GPUParticles2D.scale.x = -1
 
 func animate(direction: int) -> void :
 	if direction > 0:
 		sprite.flip_h = false
+		$GPUParticles2D.scale.x = 1
 	elif direction < 0:
 		sprite.flip_h = true
+		$GPUParticles2D.scale.x = -1
 	
 	if is_dashing:
 			sprite.play("dash")	
