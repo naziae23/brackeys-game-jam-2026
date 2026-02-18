@@ -8,3 +8,8 @@ func add_point():
 	score_label.text = str(score)
 	print(score)
 	
+func win_game():
+	get_tree().change_scene_to_file("res://scenes/menus/win_screen.tscn")
+
+func lose_game():
+	get_tree().reload_current_scene()
