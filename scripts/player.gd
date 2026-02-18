@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		update_gravity(delta)
 	
 	var direction := Input.get_axis("move_left", "move_right")
+	_dash_logic(delta)
 	
 	if !is_dashing:
 		update_movement(direction)
@@ -46,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		if !is_dashing and !can_dash:
 			can_dash = true
 			
-	_dash_logic(delta)
 	_update_dash_visuals()
 	
 	move_and_slide()
@@ -56,7 +56,7 @@ func update_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 func update_movement(direction: float) -> void:
-	if Input.is_action_just_pressed("jump") and is_on_floor_coyote():
+	if Input.is_action_just_pressed("jump") and is_on_floor_coyote() and !Input.is_action_pressed("move_down"):
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 	if direction:
@@ -81,7 +81,8 @@ func _dash_logic(delta: float) -> void:
 	if input_dir.x != 0:
 		dash_dir.x = input_dir.x
 	
-	if can_dash and Input.is_action_just_pressed("Dash"):
+	if can_dash and (is_jumping and Input.is_action_just_pressed("jump") or 
+		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("jump"))):
 		var final_dash_dir: Vector2 = dash_dir
 		final_dash_dir.y = input_dir.y
 		if input_dir.y != 0 and input_dir.x == 0:
