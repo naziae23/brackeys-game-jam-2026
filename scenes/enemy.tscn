@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://be7eppxvq80tm"]
+[gd_scene format=3 uid="uid://cfsbosort6avk"]
 
 [ext_resource type="Script" uid="uid://ct2ktiux8rtdd" path="res://scripts/enemy.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://cre4g21neyu2o" path="res://assets/Godot Tutorial/sprites/slime_purple.png" id="1_p2gj0"]

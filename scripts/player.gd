@@ -10,6 +10,7 @@ var can_dash: bool = true
 var is_dashing: bool = true
 var dash_dir: Vector2 = Vector2.RIGHT
 var dash_timer: float = 0.0
+var dead: bool = false
 
 var is_jumping: bool = false
 var time_since_grounded = 0.0
@@ -24,6 +25,11 @@ var is_gliding: bool = false
 
 func _physics_process(delta: float) -> void:
 	
+	if dead:
+		velocity += 1.75 * get_gravity() * delta
+		move_and_slide()
+		return
+		
 	if !is_on_floor():
 		time_since_grounded += delta
 	else:
@@ -87,8 +93,8 @@ func _dash_logic(delta: float) -> void:
 	if input_dir.x != 0:
 		dash_dir.x = input_dir.x
 	
-	if can_dash and (is_jumping and Input.is_action_just_pressed("jump") or 
-		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("jump"))):
+	if can_dash and (is_jumping and Input.is_action_just_pressed("dash") or 
+		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("dash"))):
 		var final_dash_dir: Vector2 = dash_dir
 		final_dash_dir.y = input_dir.y
 		if input_dir.y != 0 and input_dir.x == 0:
@@ -113,7 +119,13 @@ func _update_dash_visuals() -> void:
 	else:
 		$GPUParticles2D.emitting = false
 
-func animate(direction: float) -> void :
+func die(play_anim: bool = true) -> void:
+	if dead:
+		return
+	dead = true
+	sprite.play("death")
+
+func animate(direction: int) -> void :
 	if direction > 0:
 		sprite.flip_h = false
 		$GPUParticles2D.scale.x = 1
