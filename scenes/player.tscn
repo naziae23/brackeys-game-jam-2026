@@ -208,8 +208,9 @@ process_material = SubResource("ParticleProcessMaterial_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=526876156]
 sprite_frames = SubResource("SpriteFrames_nsdob")
-animation = &"dash"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.84311706
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=131047537]
 position = Vector2(-0.5, 4.5)

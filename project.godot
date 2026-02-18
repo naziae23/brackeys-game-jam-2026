@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="brackeys-game-jam-2026"
-<<<<<<< HEAD
-run/main_scene="uid://dt2c1k33w5wp3"
-=======
-run/main_scene="uid://b1wcsssn1np25"
->>>>>>> b469ca338b9a42becc69e0c1d7b82b88be0f0bff
+run/main_scene="uid://uj6htxe4wcmk"
 config/features=PackedStringArray("4.6", "Forward Plus")
-<<<<<<<HEADrun/main_scene="uid://ddw73j807lyq1"
+<<<<<<<HEADrun/main_scene="uid://dt2c1k33w5wp3"
 
 [audio]
 
