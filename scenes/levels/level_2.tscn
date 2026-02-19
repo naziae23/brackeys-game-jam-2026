@@ -1102,11 +1102,5 @@ position = Vector2(1584, -48)
 [node name="Collectable" parent="Collectables" unique_id=1173135254 instance=ExtResource("13_1yj8c")]
 position = Vector2(26, 8)
 
-[node name="Platforms" type="Node" parent="." unique_id=324860457]
-
-[node name="Enemies" type="Node" parent="." unique_id=759437521]
-
-[node name="Labels" type="Node" parent="." unique_id=254977210]
-
-[node name="Collectable" parent="." unique_id=266833852 instance=ExtResource("13_1yj8c")]
+[node name="Collectable2" parent="Collectables" unique_id=266833852 instance=ExtResource("13_1yj8c")]
 position = Vector2(454, -703)
