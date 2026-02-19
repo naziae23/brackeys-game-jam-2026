@@ -10,6 +10,5 @@ func _on_retry_button_up() -> void:
 func _on_next_day_button_up() -> void:
 	emit_signal("scene_changed", scene_name, "NextDay")
 
-
 func _on_main_menu_button_up() -> void:
 	emit_signal("scene_changed", scene_name, "MainMenu")
