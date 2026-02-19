@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="5_vtaks"]
+[ext_resource type="Shader" uid="uid://br3g6al63vd6q" path="res://scenes/sky.gdshader" id="7_kvuet"]
 [ext_resource type="Texture2D" uid="uid://b7usdwrfmrr5q" path="res://assets/GandalfHardcore City Tiles/City background sky.png" id="8_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="9_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bkh7c3551ggjy" path="res://assets/GandalfHardcore City Tiles/City background layer1.png" id="9_dinhu"]
+[ext_resource type="Script" uid="uid://cwenvao5b8vhd" path="res://scenes/skySprite.gd" id="9_trtic"]
 [ext_resource type="Texture2D" uid="uid://04qdd4w0pimh" path="res://assets/GandalfHardcore City Tiles/City background layer2.png" id="10_kvuet"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_kvuet"]
 
@@ -1029,6 +1031,10 @@ sources/1 = SubResource("TileSetAtlasSource_kvpfn")
 sources/2 = SubResource("TileSetAtlasSource_dinhu")
 sources/4 = SubResource("TileSetAtlasSource_kvuet")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trtic"]
+shader = ExtResource("7_kvuet")
+shader_parameter/level = 0.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -346.0
 
@@ -1037,6 +1043,7 @@ distance = -346.0
 [node name="GameManager" type="Node" parent="." unique_id=110346765]
 unique_name_in_owner = true
 script = ExtResource("1_gee14")
+level = 10
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("2_kvpfn")]
 
@@ -1066,9 +1073,11 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=416720557]
+material = SubResource("ShaderMaterial_trtic")
 scale = Vector2(1, 1.5028902)
 texture = ExtResource("8_kvpfn")
 centered = false
+script = ExtResource("9_trtic")
 
 [node name="Layer1" type="Parallax2D" parent="Background" unique_id=871384094]
 scroll_scale = Vector2(0.2, 0.2)
