@@ -13,3 +13,7 @@ func win_game():
 
 func lose_game():
 	get_tree().reload_current_scene()
+
+
+func _on_platform_on_enter() -> void:
+	pass # Replace with function body.
