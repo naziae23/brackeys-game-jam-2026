@@ -1,9 +1,9 @@
 extends Node
 
-const HIGHEST_LEVEL = 2
+const HIGHEST_LEVEL = 1
 
 @onready var current_scene = $MainMenu
-@onready var current_level = 1
+@onready var current_level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +18,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 
 	match current_scene_name:
 		"MainMenu":
-			next_scene_name = "level_1"
+			next_scene_name = "level_0"
 		"Level":
 			next_scene_name = "win_screen"
 		"WinScreen":
