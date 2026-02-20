@@ -3,10 +3,10 @@
 [ext_resource type="Shader" uid="uid://j0mm3wodkq08" path="res://shaders/sky.gdshader" id="1_cbsqf"]
 [ext_resource type="Texture2D" uid="uid://b7usdwrfmrr5q" path="res://assets/GandalfHardcore City Tiles/City background sky.png" id="1_jougr"]
 [ext_resource type="Texture2D" uid="uid://bkh7c3551ggjy" path="res://assets/GandalfHardcore City Tiles/City background layer1.png" id="2_cbsqf"]
-[ext_resource type="Script" uid="uid://cwenvao5b8vhd" path="res://scenes/skySprite.gd" id="3_wax1t"]
+[ext_resource type="Script" uid="uid://cwenvao5b8vhd" path="res://scripts/skySprite.gd" id="3_wax1t"]
 [ext_resource type="Texture2D" uid="uid://04qdd4w0pimh" path="res://assets/GandalfHardcore City Tiles/City background layer2.png" id="3_wisxt"]
 [ext_resource type="Shader" uid="uid://yh888544atjs" path="res://shaders/glitch.gdshader" id="5_1tmhi"]
-[ext_resource type="Script" uid="uid://dmju654t5f3x2" path="res://scenes/glitch.gd" id="6_l5f8m"]
+[ext_resource type="Script" uid="uid://dmju654t5f3x2" path="res://scripts/glitch.gd" id="6_l5f8m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wisxt"]
 shader = ExtResource("1_cbsqf")
