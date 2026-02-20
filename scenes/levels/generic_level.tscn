@@ -1027,11 +1027,18 @@ sources/1 = SubResource("TileSetAtlasSource_olg7q")
 sources/2 = SubResource("TileSetAtlasSource_t1rx8")
 sources/4 = SubResource("TileSetAtlasSource_8iemx")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hthll"]
+normal = Vector2(1, 0)
+distance = -176.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwkh4"]
+normal = Vector2(-0.9999999, 0.0004921259)
+distance = -1911.9958
+
 [node name="Level" type="Node2D" unique_id=952317094]
 script = ExtResource("1_hthll")
 
 [node name="LevelManager" type="Node" parent="." unique_id=1290939641]
-unique_name_in_owner = true
 script = ExtResource("2_vwkh4")
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("3_ox1pa")]
@@ -1049,7 +1056,7 @@ layer_2/tile_data = PackedInt32Array(196613, 262148, 1, 262149, 262148, 1, 32768
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=686437902]
 offset = Vector2(0, -40)
 zoom = Vector2(3, 3)
-limit_bottom = 120
+limit_bottom = 250
 position_smoothing_enabled = true
 
 [node name="Background" type="Node2D" parent="." unique_id=1057964271]
@@ -1079,3 +1086,13 @@ repeat_size = Vector2(1024, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Background/Layer2" unique_id=474392590]
 texture = ExtResource("10_pscgy")
 centered = false
+
+[node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1314099260]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=715363]
+position = Vector2(-1, 0)
+shape = SubResource("WorldBoundaryShape2D_hthll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBoundary" unique_id=1027707448]
+shape = SubResource("WorldBoundaryShape2D_vwkh4")
