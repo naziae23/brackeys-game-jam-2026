@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_4mw86"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="13_ubciw"]
 [ext_resource type="PackedScene" uid="uid://wdehdf77r3ei" path="res://scenes/winzone_locked.tscn" id="14_gj3kh"]
+[ext_resource type="PackedScene" uid="uid://cl4v8objt65r" path="res://scenes/breakable_tile.tscn" id="14_myogd"]
 [ext_resource type="PackedScene" uid="uid://fbd4cndn36lf" path="res://scenes/key.tscn" id="15_myogd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q7iv"]
@@ -1041,6 +1042,88 @@ distance = -1911.9958
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -346.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj3kh"]
+atlas = ExtResource("6_0qejo")
+region = Rect2(0, 0, 416, 128)
+
+[sub_resource type="Animation" id="Animation_myogd"]
+resource_name = "Breaking"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.16666667, -0.6666667, 0, 0),
+"times": PackedFloat32Array(0.43333334)
+}
+
+[sub_resource type="Animation" id="Animation_gj3kh"]
+resource_name = "Broken"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_s4l03"]
+resource_name = "Normal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ypncs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qejo"]
+_data = {
+&"Breaking": SubResource("Animation_myogd"),
+&"Broken": SubResource("Animation_gj3kh"),
+&"Normal": SubResource("Animation_s4l03"),
+&"RESET": SubResource("Animation_ypncs")
+}
+
 [node name="Level_0" type="Node2D" unique_id=1923879512]
 script = ExtResource("1_1q7iv")
 
@@ -1104,3 +1187,18 @@ position = Vector2(174, 4)
 
 [node name="Winzone_Locked" parent="." unique_id=689841473 instance=ExtResource("14_gj3kh")]
 position = Vector2(125, -15)
+
+[node name="BreakableTile" parent="." unique_id=1478527711 node_paths=PackedStringArray("sprite", "animator") instance=ExtResource("14_myogd")]
+position = Vector2(-94, -24)
+platformTexture = SubResource("AtlasTexture_gj3kh")
+sprite = NodePath("Sprite2D")
+animator = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BreakableTile" unique_id=118809480]
+libraries/ = SubResource("AnimationLibrary_0qejo")
+
+[node name="Sprite2D" type="Sprite2D" parent="BreakableTile" unique_id=1209006510]
+texture = SubResource("AtlasTexture_gj3kh")
+hframes = 13
+vframes = 4
+frame = 4
