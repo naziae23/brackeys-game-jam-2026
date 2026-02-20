@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="11_g16en"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="12_h7bva"]
 [ext_resource type="PackedScene" uid="uid://bahcyaco31ija" path="res://scenes/windowsill.tscn" id="13_m7gel"]
-[ext_resource type="Script" uid="uid://brc6g8rg3rl5l" path="res://scenes/moving_ground_trigger.gd" id="13_spk6w"]
+[ext_resource type="Script" uid="uid://brc6g8rg3rl5l" path="res://scripts/moving_ground_trigger.gd" id="13_spk6w"]
 [ext_resource type="PackedScene" uid="uid://b4m7tocuxtswg" path="res://scenes/moving_ground.tscn" id="14_tngvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
@@ -1140,6 +1140,15 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Winzone" parent="." unique_id=304842765 instance=ExtResource("11_g16en")]
 position = Vector2(1584, -49)
 
+[node name="moving_ground_trigger" type="Area2D" parent="." unique_id=1773532469]
+position = Vector2(849, -36)
+collision_mask = 2
+script = ExtResource("13_spk6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_ground_trigger" unique_id=1769816698]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_tngvs")
+
 [node name="Collectables" type="Node" parent="." unique_id=684343821]
 
 [node name="Collectable" parent="Collectables" unique_id=1173135254 instance=ExtResource("12_h7bva")]
@@ -1147,14 +1156,6 @@ position = Vector2(26, 8)
 
 [node name="Collectable2" parent="Collectables" unique_id=1936023448 instance=ExtResource("12_h7bva")]
 position = Vector2(454, -703)
-
-[node name="moving_ground_trigger" type="Area2D" parent="." unique_id=1773532469]
-position = Vector2(849, -36)
-script = ExtResource("13_spk6w")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_ground_trigger" unique_id=1769816698]
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_tngvs")
 
 [node name="Platforms" type="Node" parent="." unique_id=1332138895]
 

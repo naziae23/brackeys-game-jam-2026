@@ -1,10 +1,12 @@
 extends Area2D
 
-@onready var platforms = get_node("../Platforms/MovingGround/")
+@onready var platforms = $"../Platforms/MovingGround/"
 
-func _on_animation_trigger_area_body_entered(body):
+func _on_body_entered(_body: Node2D) -> void:
+	print("entered")
 	# check if the entering body is in the "player" group
 	for p in platforms.get_children():
-		if body.is_in_group("player"):
+		if _body.is_in_group("player"):
 			p.get_node("AnimationPlayer").play("move_up")
+			queue_free()
 	print("ground pieces are moving")
