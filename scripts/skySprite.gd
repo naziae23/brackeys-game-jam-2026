@@ -5,6 +5,7 @@ extends Sprite2D
 func _ready() -> void:
 	#print(game_manager.current_level)
 	material.set_shader_parameter("level", game_manager.current_level)
+	material.set_shader_parameter("max_level", game_manager.HIGHEST_LEVEL)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

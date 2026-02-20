@@ -11,6 +11,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wisxt"]
 shader = ExtResource("1_cbsqf")
 shader_parameter/level = 0.0
+shader_parameter/max_level = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6vm3t"]
 shader = ExtResource("5_1tmhi")
