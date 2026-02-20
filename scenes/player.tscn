@@ -13,6 +13,8 @@ particles_anim_loop = false
 gravity = Vector3(0, 0, 0)
 scale_min = 0.75
 scale_max = 0.75
+scale_over_velocity_min = 10.0
+scale_over_velocity_max = 10.0
 anim_offset_min = 0.76
 anim_offset_max = 0.76
 
@@ -177,9 +179,8 @@ process_material = SubResource("ParticleProcessMaterial_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=526876156]
 sprite_frames = SubResource("SpriteFrames_nsdob")
-animation = &"idle"
+animation = &"glide"
 autoplay = "idle"
-frame_progress = 0.7321219
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=131047537]
 position = Vector2(-1.5, -0.25)
