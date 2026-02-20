@@ -1,10 +1,14 @@
 extends Control
 
+signal scene_changed(scene_name, context)
+
+@onready var scene_name = self.name
+
 func _on_retry_button_up() -> void:
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	emit_signal("scene_changed", scene_name, "Retry")
 
 func _on_next_day_button_up() -> void:
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	emit_signal("scene_changed", scene_name, "NextDay")
 
 func _on_main_menu_button_up() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	emit_signal("scene_changed", scene_name, "MainMenu")

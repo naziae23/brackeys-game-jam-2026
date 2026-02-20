@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+# PLAYER INVENTORY #
+var has_key = false
+#
+
 const SPEED = 130.0
 const JUMP_VELOCITY = -350.0
 
@@ -149,3 +153,11 @@ func animate(direction: int) -> void :
 func is_on_floor_coyote() -> bool:
 	return (time_since_grounded <= coyoteTime) and !is_jumping
 	
+
+func get_key() -> void:
+	print("wow iphone")
+	has_key = true
+
+func used_key() -> void:
+	print("iphone :(")
+	has_key = false
