@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://d0ph3umowyyhu"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_gee14"]
+[ext_resource type="Script" uid="uid://cis8xavab7r8" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bngb7q7nsk2f6" path="res://scenes/hud.tscn" id="2_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="5_vtaks"]
-[ext_resource type="Shader" path="res://scenes/sky.gdshader" id="7_kvuet"]
+[ext_resource type="Shader" uid="uid://br3g6al63vd6q" path="res://scenes/sky.gdshader" id="7_kvuet"]
 [ext_resource type="Texture2D" uid="uid://b7usdwrfmrr5q" path="res://assets/GandalfHardcore City Tiles/City background sky.png" id="8_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="9_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bkh7c3551ggjy" path="res://assets/GandalfHardcore City Tiles/City background layer1.png" id="9_dinhu"]
-[ext_resource type="Script" path="res://scenes/skySprite.gd" id="9_trtic"]
+[ext_resource type="Script" uid="uid://cwenvao5b8vhd" path="res://scenes/skySprite.gd" id="9_trtic"]
 [ext_resource type="Texture2D" uid="uid://04qdd4w0pimh" path="res://assets/GandalfHardcore City Tiles/City background layer2.png" id="10_kvuet"]
+[ext_resource type="Shader" uid="uid://d4latasdikjk5" path="res://scenes/glitch.gdshader" id="11_ir15t"]
+[ext_resource type="Script" uid="uid://dmju654t5f3x2" path="res://scenes/glitch.gd" id="12_ca42v"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
@@ -1035,6 +1037,10 @@ sources/4 = SubResource("TileSetAtlasSource_kvuet")
 shader = ExtResource("7_kvuet")
 shader_parameter/level = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ca42v"]
+shader = ExtResource("11_ir15t")
+shader_parameter/glitch_intensity = 0.02
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -346.0
 
@@ -1043,7 +1049,7 @@ distance = -346.0
 [node name="GameManager" type="Node" parent="." unique_id=110346765]
 unique_name_in_owner = true
 script = ExtResource("1_gee14")
-level = 10
+level = 5
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("2_kvpfn")]
 
@@ -1086,6 +1092,15 @@ repeat_size = Vector2(1024, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Background/Layer1" unique_id=1366551722]
 texture = ExtResource("9_dinhu")
 centered = false
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Background/Layer1" unique_id=1154313914]
+copy_mode = 2
+
+[node name="glitch" type="ColorRect" parent="Background/Layer1/BackBufferCopy" unique_id=2128650942]
+material = SubResource("ShaderMaterial_ca42v")
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("12_ca42v")
 
 [node name="Layer2" type="Parallax2D" parent="Background" unique_id=441778671]
 scroll_scale = Vector2(0.25, 0.25)
