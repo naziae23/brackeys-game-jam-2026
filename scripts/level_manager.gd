@@ -1,17 +1,19 @@
 extends Node
 
-var score = 0
+signal scene_changed(scene_name, context)
+
 @onready var score_label: Label = $"../HUD/score"
+
+var score = 0
 
 func add_point():
 	score += 1
 	score_label.text = str(score)
-	print(score)
 	
-func win_game():
-	get_tree().change_scene_to_file("res://scenes/menus/win_screen.tscn")
+func win_level():
+	emit_signal("scene_changed", "Level", "")
 
-func lose_game():
+func lose_level():
 	get_tree().reload_current_scene()
 
 
