@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_ndlae"]
 [ext_resource type="PackedScene" uid="uid://b3dk183ymh2w6" path="res://scenes/background.tscn" id="8_excbq"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="11_tv7cl"]
+[ext_resource type="PackedScene" uid="uid://bahcyaco31ija" path="res://scenes/windowsill.tscn" id="12_iav0o"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_r88tb"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="13_1yj8c"]
 
@@ -1142,4 +1143,24 @@ position = Vector2(1808, -48)
 position = Vector2(121, -17)
 
 [node name="Collectable2" parent="Collectables" unique_id=266833852 instance=ExtResource("13_1yj8c")]
-position = Vector2(454, -703)
+position = Vector2(455, -712)
+
+[node name="Platforms" type="Node" parent="." unique_id=1672178417]
+
+[node name="Windowsill" parent="Platforms" unique_id=1922593401 instance=ExtResource("12_iav0o")]
+position = Vector2(320, -67)
+
+[node name="Windowsill2" parent="Platforms" unique_id=420168663 instance=ExtResource("12_iav0o")]
+position = Vector2(192, -66)
+
+[node name="Windowsill3" parent="Platforms" unique_id=234818970 instance=ExtResource("12_iav0o")]
+position = Vector2(192, -163)
+
+[node name="Windowsill4" parent="Platforms" unique_id=2128616676 instance=ExtResource("12_iav0o")]
+position = Vector2(320, -163)
+
+[node name="Windowsill5" parent="Platforms" unique_id=1946763440 instance=ExtResource("12_iav0o")]
+position = Vector2(320, -259)
+
+[node name="Windowsill6" parent="Platforms" unique_id=1095501829 instance=ExtResource("12_iav0o")]
+position = Vector2(192, -259)
