@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://oi8ouedgx1gg"]
+
+[ext_resource type="Script" uid="uid://dn803crycveiw" path="res://scripts/meteor_shower.gd" id="1_4lk53"]
+[ext_resource type="PackedScene" uid="uid://dyqcbc7nvrnes" path="res://scenes/meteorite.tscn" id="2_sbkwa"]
+
+[node name="Meteor Shower" type="Node2D" unique_id=1746569243]
+script = ExtResource("1_4lk53")
+prefab = ExtResource("2_sbkwa")
+
+[node name="Timer" type="Timer" parent="." unique_id=354861282]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
