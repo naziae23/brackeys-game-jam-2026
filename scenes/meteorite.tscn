@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyqcbc7nvrnes"]
+
+[ext_resource type="Script" uid="uid://dskx6gujfnpsw" path="res://scripts/meteorite.gd" id="1_ghl35"]
+[ext_resource type="Texture2D" uid="uid://dbdpkts4rwu6i" path="res://assets/kenney_space-shooter-extension/PNG/Sprites X2/Meteors/spaceMeteors_003.png" id="2_ur1br"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdrwk"]
+radius = 20.22375
+
+[node name="Meteorite" type="Area2D" unique_id=2105505654]
+collision_mask = 3
+script = ExtResource("1_ghl35")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=674703531]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ur1br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734796710]
+shape = SubResource("CircleShape2D_cdrwk")
+
+[node name="Timer" type="Timer" parent="." unique_id=1208666458]
+wait_time = 0.6
+one_shot = true

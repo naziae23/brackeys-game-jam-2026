@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://wdehdf77r3ei" path="res://scenes/winzone_locked.tscn" id="14_gj3kh"]
 [ext_resource type="PackedScene" uid="uid://cl4v8objt65r" path="res://scenes/breakable_tile.tscn" id="14_myogd"]
 [ext_resource type="PackedScene" uid="uid://fbd4cndn36lf" path="res://scenes/key.tscn" id="15_myogd"]
+[ext_resource type="PackedScene" uid="uid://dyqcbc7nvrnes" path="res://scenes/meteorite.tscn" id="15_s4l03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q7iv"]
 texture = ExtResource("4_s4l03")
@@ -1202,3 +1203,6 @@ texture = SubResource("AtlasTexture_gj3kh")
 hframes = 13
 vframes = 4
 frame = 4
+
+[node name="Meteorite" parent="." unique_id=2105505654 instance=ExtResource("15_s4l03")]
+position = Vector2(295, -250)
