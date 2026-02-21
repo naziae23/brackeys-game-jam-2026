@@ -16,6 +16,5 @@ func win_level():
 func lose_level():
 	get_tree().reload_current_scene()
 
-
 func _on_platform_on_enter() -> void:
 	pass # Replace with function body.
