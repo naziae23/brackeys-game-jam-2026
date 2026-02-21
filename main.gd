@@ -27,7 +27,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 					next_scene_name = "level_" + str(current_level)
 				"NextDay":
 					next_scene_name = "level_" + str(min(current_level + 1, HIGHEST_LEVEL))
-					current_level = current_level + 1
+					current_level = min(current_level + 1, HIGHEST_LEVEL)
 				"MainMenu":
 					next_scene_name = "main_menu"
 		_: 
