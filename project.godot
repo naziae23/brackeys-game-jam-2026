@@ -13,7 +13,6 @@ config_version=5
 config/name="brackeys-game-jam-2026"
 run/main_scene="uid://bwtq2y5swny22"
 config/features=PackedStringArray("4.6", "Forward Plus")
-<<<<<<<HEADrun/main_scene="uid://dt2c1k33w5wp3"
 
 [audio]
 
