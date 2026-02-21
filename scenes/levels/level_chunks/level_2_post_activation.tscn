@@ -1071,7 +1071,7 @@ sources/2 = SubResource("TileSetAtlasSource_wx3km")
 sources/4 = SubResource("TileSetAtlasSource_35nju")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28h2x"]
-size = Vector2(71, 73.5)
+size = Vector2(31.5, 403.375)
 
 [node name="Node" type="Node" unique_id=957620954]
 
@@ -1094,21 +1094,22 @@ collision_mask = 2
 script = ExtResource("5_wx3km")
 text = "press [jump] twice to dash
 you can dash in any direction"
+times_entered_for_activation = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=666838524]
-position = Vector2(1002.5, 124.25)
+position = Vector2(893, 52)
 shape = SubResource("RectangleShape2D_28h2x")
 
-[node name="Temporary_text" parent="Area2D" unique_id=1220138921 instance=ExtResource("6_35nju")]
+[node name="Temporary_text2" parent="Area2D" unique_id=1220138921 instance=ExtResource("6_35nju")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 890.0
-offset_top = 59.0
-offset_right = 1121.0
-offset_bottom = 110.0
+offset_left = 964.0
+offset_top = 33.0
+offset_right = 1204.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_5ey10")
@@ -1116,6 +1117,37 @@ theme_override_font_sizes/font_size = 10
 text = "press [jump] twice to dash
 You can dash in any direction "
 horizontal_alignment = 1
+autowrap_mode = 2
+time_shown = 45.0
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=848000832]
+position = Vector2(-635, -166)
+collision_mask = 2
+script = ExtResource("5_wx3km")
+text = "try jumping on the window sill"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=775667396]
+position = Vector2(1082, -38.3125)
+shape = SubResource("RectangleShape2D_28h2x")
+
+[node name="Temporary_text2" parent="Area2D2" unique_id=902137033 instance=ExtResource("6_35nju")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 942.0
+offset_top = 112.0
+offset_right = 1063.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_5ey10")
+theme_override_font_sizes/font_size = 10
+text = "try jumping on the window sill"
+horizontal_alignment = 1
+autowrap_mode = 2
 time_shown = 45.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
