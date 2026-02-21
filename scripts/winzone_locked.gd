@@ -21,7 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 func replace_with_winzone() -> void:
 	var winzone_instance = WINZONE.instantiate()
 	var parent_node = get_parent()
-	print(parent_node.name)
 	parent_node.add_child(winzone_instance)
 	winzone_instance.global_position = global_position
 	queue_free()

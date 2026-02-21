@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 # PLAYER INVENTORY #
 var has_key = false
+# PLAYER ABILITES #
+@export var has_dash = false
+@export var has_glide = false
 #
 
 const SPEED = 130.0
@@ -78,7 +81,7 @@ func update_movement(direction: float) -> void:
 		if velocity.y < -150:
 			velocity.y = -150
 			
-	if Input.is_action_pressed("glide"):
+	if has_glide and Input.is_action_pressed("glide"):
 		if is_jumping and !is_gliding:
 			is_gliding = true
 			velocity.y = 0
@@ -98,7 +101,7 @@ func _dash_logic(delta: float) -> void:
 	if input_dir.x != 0:
 		dash_dir.x = input_dir.x
 	
-	if can_dash and (is_jumping and Input.is_action_just_pressed("dash") or 
+	if has_dash and can_dash and (is_jumping and Input.is_action_just_pressed("dash") or 
 		(!is_jumping and Input.is_action_pressed("move_down") and Input.is_action_just_pressed("dash"))):
 		var final_dash_dir: Vector2 = dash_dir
 		final_dash_dir.y = input_dir.y
@@ -161,3 +164,6 @@ func get_key() -> void:
 func used_key() -> void:
 	print("iphone :(")
 	has_key = false
+
+func unlock_dash() -> void:
+	has_dash = true
