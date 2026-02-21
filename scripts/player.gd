@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		time_since_grounded = 0
 		is_jumping = false
+		is_gliding = false
 	
 	
 	var direction := Input.get_axis("move_left", "move_right")
@@ -137,7 +138,9 @@ func animate(direction: int) -> void :
 		sprite.flip_h = true
 		$GPUParticles2D.scale.x = -1
 	
-	if is_dashing:
+	if is_gliding:
+		sprite.play("glide")
+	elif is_dashing:
 			sprite.play("dash")	
 	elif is_on_floor_coyote():
 		if direction == 0:

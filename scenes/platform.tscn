@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bhla4iu14jv8y"]
 
 [ext_resource type="Texture2D" uid="uid://dxmt66vqgm3id" path="res://assets/Godot Tutorial/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="Script" uid="uid://b45xbc4biy10d" path="res://scripts/moving_ground.gd" id="1_nlgqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(30, 7)
 
 [node name="Platform" type="AnimatableBody2D" unique_id=482076114]
+script = ExtResource("1_nlgqw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=891429809]
 texture = ExtResource("1_ba0x2")
