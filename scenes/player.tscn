@@ -167,6 +167,7 @@ size = Vector2(25, 56.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=854190572]
 z_index = 5
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 script = ExtResource("1_g2els")
 
@@ -178,6 +179,7 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=526876156]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nsdob")
 animation = &"glide"
 autoplay = "idle"
