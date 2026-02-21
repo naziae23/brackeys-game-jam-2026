@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="2_qpirc"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="3_8sfyu"]
 [ext_resource type="PackedScene" uid="uid://cgba1ertv8s1m" path="res://scenes/dash_unlockable.tscn" id="4_qpirc"]
+[ext_resource type="Script" uid="uid://dmy6yjpxrgin0" path="res://scripts/temporary_text_area.gd" id="5_wx3km"]
+[ext_resource type="PackedScene" uid="uid://ds06xshcay5a2" path="res://scenes/temporary_text.tscn" id="6_35nju"]
+[ext_resource type="FontFile" uid="uid://bxlysp4r2ewn2" path="res://assets/Godot Tutorial/fonts/PixelOperator8.ttf" id="7_5ey10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofcqd"]
 texture = ExtResource("1_iqcli")
@@ -1067,6 +1070,9 @@ sources/1 = SubResource("TileSetAtlasSource_ofcqd")
 sources/2 = SubResource("TileSetAtlasSource_wx3km")
 sources/4 = SubResource("TileSetAtlasSource_35nju")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28h2x"]
+size = Vector2(71, 73.5)
+
 [node name="Node" type="Node" unique_id=957620954]
 
 [node name="TileMap3" type="TileMap" parent="." unique_id=272009071]
@@ -1082,3 +1088,34 @@ layer_3/tile_data = PackedInt32Array(-65486, 655364, 6, -65455, 458756, 0, 81, 2
 
 [node name="Dash_Unlockable" parent="." unique_id=67255458 instance=ExtResource("4_qpirc")]
 position = Vector2(830, 81)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=360398002]
+collision_mask = 2
+script = ExtResource("5_wx3km")
+text = "press [jump] twice to dash
+you can dash in any direction"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=666838524]
+position = Vector2(1002.5, 124.25)
+shape = SubResource("RectangleShape2D_28h2x")
+
+[node name="Temporary_text" parent="Area2D" unique_id=1220138921 instance=ExtResource("6_35nju")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 890.0
+offset_top = 59.0
+offset_right = 1121.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_5ey10")
+theme_override_font_sizes/font_size = 10
+text = "press [jump] twice to dash
+You can dash in any direction "
+horizontal_alignment = 1
+time_shown = 45.0
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
