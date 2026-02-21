@@ -107,4 +107,3 @@ libraries/ = SubResource("AnimationLibrary_kx5gw")
 
 [node name="wow iphone" type="AudioStreamPlayer2D" parent="AnimationPlayer" index="0" unique_id=2068483174]
 stream = ExtResource("5_tnbe0")
-volume_db = 24.0
