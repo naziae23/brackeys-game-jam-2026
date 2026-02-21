@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://wdehdf77r3ei" path="res://scenes/winzone_locked.tscn" id="14_gj3kh"]
 [ext_resource type="PackedScene" uid="uid://cl4v8objt65r" path="res://scenes/breakable_tile.tscn" id="14_myogd"]
 [ext_resource type="PackedScene" uid="uid://fbd4cndn36lf" path="res://scenes/key.tscn" id="15_myogd"]
-[ext_resource type="PackedScene" uid="uid://cob02qgpx3k83" path="res://scenes/gravity_modifier.tscn" id="16_s4l03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q7iv"]
 texture = ExtResource("4_s4l03")
@@ -1151,9 +1150,6 @@ position = Vector2(0, -6.9999995)
 offset = Vector2(0, -40)
 zoom = Vector2(3, 3)
 limit_bottom = 250
-
-[node name="Gravity_modifier" parent="Player" unique_id=1334557714 instance=ExtResource("16_s4l03")]
-isOnTimer = true
 
 [node name="Background" parent="." unique_id=1092007916 instance=ExtResource("8_1q7iv")]
 
