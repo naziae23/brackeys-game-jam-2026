@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bahcyaco31ija"]
+
+[ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="1_n17pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n17pv"]
+size = Vector2(32, 4)
+
+[node name="Windowsill" type="AnimatableBody2D" unique_id=1922593401]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=555004345]
+texture = ExtResource("1_n17pv")
+region_enabled = true
+region_rect = Rect2(544, 27, 32, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2132435119]
+shape = SubResource("RectangleShape2D_n17pv")
+one_way_collision = true
+one_way_collision_margin = 8.3

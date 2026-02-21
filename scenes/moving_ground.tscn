@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b4m7tocuxtswg"]
+
+[ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="1_2m5ld"]
+[ext_resource type="Script" uid="uid://b45xbc4biy10d" path="res://scripts/moving_ground.gd" id="1_v6rgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m5ld"]
+size = Vector2(50, 18)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1990888444]
+script = ExtResource("1_v6rgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334397145]
+texture = ExtResource("1_2m5ld")
+region_enabled = true
+region_rect = Rect2(15, 0, 49, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989902503]
+shape = SubResource("RectangleShape2D_2m5ld")

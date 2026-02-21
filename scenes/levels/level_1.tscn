@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="5_r88tb"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="6_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_ndlae"]
-[ext_resource type="Texture2D" uid="uid://b7usdwrfmrr5q" path="res://assets/GandalfHardcore City Tiles/City background sky.png" id="8_v8d84"]
-[ext_resource type="Texture2D" uid="uid://bkh7c3551ggjy" path="res://assets/GandalfHardcore City Tiles/City background layer1.png" id="9_gw1l3"]
-[ext_resource type="Texture2D" uid="uid://04qdd4w0pimh" path="res://assets/GandalfHardcore City Tiles/City background layer2.png" id="10_p4se4"]
+[ext_resource type="PackedScene" uid="uid://b3dk183ymh2w6" path="res://scenes/background.tscn" id="8_excbq"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="11_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_r88tb"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="13_1yj8c"]
@@ -1109,33 +1107,7 @@ zoom = Vector2(3, 3)
 limit_bottom = 250
 position_smoothing_enabled = true
 
-[node name="Background" type="Node2D" parent="." unique_id=1057964271]
-z_index = -5
-
-[node name="Sky" type="Parallax2D" parent="Background" unique_id=825786048]
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Sky" unique_id=466203879]
-scale = Vector2(1, 1.5028902)
-texture = ExtResource("8_v8d84")
-centered = false
-
-[node name="Layer1" type="Parallax2D" parent="Background" unique_id=868315897]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Layer1" unique_id=391549178]
-texture = ExtResource("9_gw1l3")
-centered = false
-
-[node name="Layer2" type="Parallax2D" parent="Background" unique_id=75680344]
-scroll_scale = Vector2(0.25, 0.25)
-repeat_size = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Layer2" unique_id=474392590]
-texture = ExtResource("10_p4se4")
-centered = false
+[node name="Background" parent="." unique_id=1092007916 instance=ExtResource("8_excbq")]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=2144249659]
 collision_mask = 2

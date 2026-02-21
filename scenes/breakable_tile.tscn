@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cl4v8objt65r"]
+
+[ext_resource type="Script" uid="uid://btefvlhdah1wt" path="res://scripts/breakable_tile.gd" id="1_2qbxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2863"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qbxc"]
+resource_local_to_scene = true
+
+[node name="BreakableTile" type="StaticBody2D" unique_id=1478527711]
+script = ExtResource("1_2qbxc")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1721229565]
+shape = SubResource("RectangleShape2D_g2863")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=313100256]
+collision_mask = 2
+
+[node name="Detector" type="CollisionShape2D" parent="Area2D" unique_id=268101675]
+shape = SubResource("RectangleShape2D_2qbxc")
