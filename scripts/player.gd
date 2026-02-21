@@ -26,11 +26,12 @@ var is_gliding: bool = false
 @export var glideGravityDecrease: float = 0.15
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	
 	if dead:
-		velocity += 1.75 * get_gravity() * delta
+		velocity += 1.75 * Vector2(0.0, gravity) * delta
 		move_and_slide()
 		return
 		
@@ -62,7 +63,7 @@ func _physics_process(delta: float) -> void:
 func update_gravity(delta: float) -> void:
 	var grav_modifier = 1.0 if (!is_gliding and !is_dashing) else glideGravityDecrease
 	if not is_on_floor_coyote():
-		velocity += get_gravity() * delta * grav_modifier
+		velocity += Vector2(0.0, gravity) * delta * grav_modifier
 	
 func update_movement(direction: float) -> void:
 	if (Input.is_action_just_pressed("jump") and is_on_floor_coyote() 
