@@ -1072,6 +1072,7 @@ position_smoothing_enabled = true
 
 [node name="Gravity_modifier" parent="Player" unique_id=1334557714 instance=ExtResource("16_s4l03")]
 isOnTimer = true
+startInOnState = true
 
 [node name="Background" type="Node2D" parent="." unique_id=391733326]
 z_index = -5
