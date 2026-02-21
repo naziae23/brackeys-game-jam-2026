@@ -167,6 +167,7 @@ size = Vector2(25, 56.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=854190572]
 z_index = 5
+scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_g2els")
 
