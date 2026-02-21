@@ -3,7 +3,7 @@ extends Node
 @export var isOnTimer = false
 @export var timeInterval = 6.0
 @export var duration = 3.0
-@export var inverse_strength = 0.25
+@export var inverse_strength = 0.15
 
 @onready var timer: Timer = $Timer
 
