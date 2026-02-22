@@ -3373,7 +3373,7 @@ region_enabled = true
 region_rect = Rect2(96, 384, 32, 32)
 
 [node name="BreakableTile17" parent="BreakableTiles" unique_id=519747036 node_paths=PackedStringArray("sprite", "animator") instance=ExtResource("13_f6egh")]
-position = Vector2(2416, 192)
+position = Vector2(2417, 199)
 platformTexture = ExtResource("6_josfm")
 sprite = NodePath("Sprite2D")
 animator = NodePath("AnimationPlayer")
