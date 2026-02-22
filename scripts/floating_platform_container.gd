@@ -20,9 +20,3 @@ func _ready() -> void:
 	platform.returnDuration = returnDuration
 	area_2d.returnTime = returnAfter
 	
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
