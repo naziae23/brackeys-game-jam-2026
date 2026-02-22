@@ -26,14 +26,10 @@ func _on_timer_timeout() -> void:
 	level_manager.lose_level()
 	Engine.time_scale = 1.0
 	queue_free()
-	
-
 
 func _screen_exited() -> void:
 	if !killedPlayer:
 		byeTimer.start()
-	
-
 
 func _on_bye_timer_timeout() -> void:
 	queue_free()

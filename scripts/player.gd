@@ -170,3 +170,6 @@ func used_key() -> void:
 
 func unlock_dash() -> void:
 	has_dash = true
+	
+func unlock_glide() -> void:
+	has_glide = true

@@ -32,7 +32,6 @@ func trigger_gravity_mod() -> void:
 		timer.wait_time = duration
 		timer.start()
 
-
 func _on_timer_timeout() -> void:
 	if isOn:
 		get_parent().gravity = true_gravity

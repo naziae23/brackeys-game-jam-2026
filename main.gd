@@ -1,17 +1,29 @@
 extends Node
 
-const HIGHEST_LEVEL = 3
+const HIGHEST_LEVEL = 5
 
 @onready var current_scene = $MainMenu
 @onready var current_level = 0
 
 @export var test_level: int = 0
 @export var debug_level_select: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_scene.scene_changed.connect(handle_scene_changed)
 	
 func handle_scene_changed(current_scene_name: String, context: String) -> void:
+	if debug_level_select:
+		var next_scene_name2 = "level_" + str(min(test_level, HIGHEST_LEVEL))
+		var next_scene2 = load("res://scenes/levels/" + next_scene_name2 + ".tscn")
+		var next_scene_instance2 = next_scene2.instantiate()
+		add_child(next_scene_instance2)
+		current_scene.queue_free()
+		current_scene = next_scene_instance2
+		if current_scene.has_signal("scene_changed"):
+			current_scene.scene_changed.connect(handle_scene_changed)
+			
+		return
 
 	if debug_level_select:
 		var next_scene_name2 = "level_" + str(min(test_level, HIGHEST_LEVEL))
