@@ -1159,7 +1159,7 @@ position = Vector2(-1, -18)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1296301348]
 offset = Vector2(0, -40)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 limit_bottom = 250
 
 [node name="Background" parent="." unique_id=1092007916 instance=ExtResource("8_1q7iv")]
