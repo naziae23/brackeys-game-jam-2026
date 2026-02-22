@@ -18,7 +18,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 
 	match current_scene_name:
 		"MainMenu":
-			next_scene_name = "level_0"
+			next_scene_name = "level_last"
 		"Level":
 			next_scene_name = "win_screen"
 		"WinScreen":

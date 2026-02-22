@@ -7,7 +7,7 @@
 radius = 20.22375
 
 [node name="Meteorite" type="Area2D" unique_id=2105505654]
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_ghl35")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=674703531]

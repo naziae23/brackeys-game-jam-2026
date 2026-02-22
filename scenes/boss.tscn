@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bem7blxtwf71i"]
+
+[ext_resource type="Texture2D" uid="uid://h5fpnp7txb5q" path="res://Salman.png" id="1_dlmty"]
+[ext_resource type="Script" uid="uid://mfqxg1swt1oi" path="res://scripts/boss.gd" id="1_neq0i"]
+[ext_resource type="Script" uid="uid://cn8verlqej2ht" path="res://scripts/boss_killzone.gd" id="4_qnbj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jncid"]
+size = Vector2(126, 331)
+
+[node name="SalmanKhan" type="CharacterBody2D" unique_id=751787219]
+z_index = 5
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_neq0i")
+RAFTAAR = 160.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=716027499]
+rotation = 1.5707964
+scale = Vector2(0.39376444, 0.34920636)
+texture = ExtResource("1_dlmty")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1966984577]
+
+[node name="BossKillzone" type="Area2D" parent="." unique_id=781136025]
+collision_mask = 2
+script = ExtResource("4_qnbj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossKillzone" unique_id=1440330102]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jncid")
+
+[node name="Timer" type="Timer" parent="BossKillzone" unique_id=17319999]
+
+[connection signal="body_entered" from="BossKillzone" to="BossKillzone" method="_on_body_entered"]
+[connection signal="timeout" from="BossKillzone/Timer" to="BossKillzone" method="_on_timer_timeout"]
