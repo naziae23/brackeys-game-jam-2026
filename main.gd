@@ -1,6 +1,6 @@
 extends Node
 
-const HIGHEST_LEVEL = 4
+const HIGHEST_LEVEL = 3
 
 @onready var current_scene = $MainMenu
 @onready var current_level = 0

@@ -16,6 +16,7 @@ theme_override_font_sizes/font_size = 48
 text = "0"
 
 [node name="timer" type="Label" parent="." unique_id=1630888581]
+visible = false
 offset_left = 445.0
 offset_top = 13.0
 offset_right = 1135.0
