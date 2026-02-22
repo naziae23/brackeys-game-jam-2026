@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m5ld"]
 size = Vector2(50, 18)
 
-[node name="Platform" type="AnimatableBody2D" unique_id=1990888444]
+[node name="MovingGround" type="AnimatableBody2D" unique_id=1990888444]
 script = ExtResource("1_v6rgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334397145]
@@ -16,3 +16,4 @@ region_rect = Rect2(15, 0, 49, 17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989902503]
 shape = SubResource("RectangleShape2D_2m5ld")
+one_way_collision = true

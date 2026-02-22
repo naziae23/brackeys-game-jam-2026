@@ -21,6 +21,7 @@ shader_parameter/pixel_size = 10.0
 z_index = -5
 
 [node name="Sky" type="Parallax2D" parent="." unique_id=1917189925]
+scale = Vector2(1.389, 1.389)
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1024, 0)
 
@@ -32,6 +33,7 @@ centered = false
 script = ExtResource("3_wax1t")
 
 [node name="Layer1" type="Parallax2D" parent="." unique_id=682004088]
+scale = Vector2(1.389, 1.389)
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1024, 0)
 
@@ -40,6 +42,7 @@ texture = ExtResource("2_cbsqf")
 centered = false
 
 [node name="Layer2" type="Parallax2D" parent="." unique_id=702522553]
+scale = Vector2(1.389, 1.389)
 scroll_scale = Vector2(0.25, 0.25)
 repeat_size = Vector2(1024, 0)
 

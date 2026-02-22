@@ -22,6 +22,11 @@ buses/default_bus_layout=""
 
 Music="*uid://bmefe828hnajf"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
 [input]
 
 jump={
