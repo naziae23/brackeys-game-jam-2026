@@ -1,5 +1,7 @@
 extends Node
 
+@export var active: bool = false
+
 @export var isOnTimer = false
 @export var timeInterval = 6.0
 @export var duration = 3.0
@@ -22,13 +24,13 @@ func start_idle_timer() -> void:
 	timer.start()
 
 func trigger_gravity_mod() -> void:
-	if isOn:
-		return
-	get_parent().gravity = -(get_parent().gravity) * inverse_strength
-	isOn = true
-	timer.wait_time = duration
-	timer.start()
-
+	if active:
+		if isOn:
+			return
+		get_parent().gravity = -(get_parent().gravity) * inverse_strength
+		isOn = true
+		timer.wait_time = duration
+		timer.start()
 
 func _on_timer_timeout() -> void:
 	if isOn:

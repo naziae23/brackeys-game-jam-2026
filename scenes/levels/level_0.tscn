@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cis8xavab7r8" path="res://scripts/level_manager.gd" id="2_gj3kh"]
 [ext_resource type="PackedScene" uid="uid://bngb7q7nsk2f6" path="res://scenes/hud.tscn" id="3_myogd"]
 [ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="4_s4l03"]
+[ext_resource type="Script" uid="uid://cdwi2lwgwyw1m" path="res://scripts/hud.gd" id="4_ypncs"]
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="5_ypncs"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="6_0qejo"]
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_erlbe"]
@@ -1054,6 +1055,7 @@ script = ExtResource("1_1q7iv")
 script = ExtResource("2_gj3kh")
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("3_myogd")]
+script = ExtResource("4_ypncs")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=334168162]
 tile_set = SubResource("TileSet_lbhrr")
@@ -1072,7 +1074,7 @@ position = Vector2(-1, -18)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1296301348]
 offset = Vector2(0, -40)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 limit_bottom = 250
 
 [node name="Background" parent="." unique_id=1092007916 instance=ExtResource("8_1q7iv")]
