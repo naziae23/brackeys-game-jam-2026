@@ -14,7 +14,7 @@ func win_level():
 	emit_signal("scene_changed", "Level", "")
 
 func lose_level():
-	get_tree().reload_current_scene()
+	emit_signal("scene_changed", "Level", "Death")
 
 func _on_platform_on_enter() -> void:
 	pass # Replace with function body.

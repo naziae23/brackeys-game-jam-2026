@@ -8,5 +8,8 @@ func _ready() -> void:
 	level_manager.scene_changed.connect(handle_scene_changed)
 
 func handle_scene_changed(current_scene_name: String, context: String):
-	var level_number = level_name.to_int()
-	emit_signal("scene_changed", current_scene_name, str(level_number))
+	if context == "Death":
+		emit_signal("scene_changed", current_scene_name, "Death")
+	else:
+		var level_number = level_name.to_int()
+		emit_signal("scene_changed", current_scene_name, str(level_number))

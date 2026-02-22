@@ -34,7 +34,12 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 		"MainMenu":
 			next_scene_name = "level_0"
 		"Level":
-			next_scene_name = "win_screen"
+			match context: 
+				"Death":
+					next_scene_name = "level_" + str(current_level)
+				_:
+					next_scene_name = "win_screen"
+
 		"WinScreen":
 			match context:
 				"Retry": 
