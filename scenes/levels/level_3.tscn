@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://b3yqgq5tf2yfe" path="res://assets/Cave Tileset Pack/PNG files/CaveG.png" id="6_josfm"]
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_5f5xw"]
 [ext_resource type="PackedScene" uid="uid://b3dk183ymh2w6" path="res://scenes/background.tscn" id="8_o3ttr"]
-[ext_resource type="Script" uid="uid://cdwi2lwgwyw1m" path="res://scripts/hud.gd" id="9_apo5x"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="10_qi5uv"]
 [ext_resource type="PackedScene" uid="uid://cl4v8objt65r" path="res://scenes/breakable_tile.tscn" id="13_f6egh"]
 [ext_resource type="PackedScene" uid="uid://dol0p6ys1uuor" path="res://scenes/floatingPlatformContainer.tscn" id="13_t4txi"]
@@ -3099,7 +3098,6 @@ tile_map_data = PackedByteArray("AAAFAAMABAAEAAEAAAAFAAQABAAEAAEAAAAFAAUABAAEAAE
 tile_set = SubResource("TileSet_iwr0g")
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("6_1nwmf")]
-script = ExtResource("9_apo5x")
 day_number = 3
 
 [node name="Player" parent="." unique_id=854190572 instance=ExtResource("7_5f5xw")]
@@ -3155,7 +3153,6 @@ position = Vector2(976, 160)
 platformTexture = ExtResource("6_josfm")
 sprite = NodePath("Sprite2D")
 animator = NodePath("AnimationPlayer")
-returns = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BreakableTiles/BreakableTile" unique_id=520859933]
 libraries/ = SubResource("AnimationLibrary_apo5x")
@@ -3170,7 +3167,6 @@ position = Vector2(1008, 160)
 platformTexture = ExtResource("6_josfm")
 sprite = NodePath("Sprite2D")
 animator = NodePath("AnimationPlayer")
-returns = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BreakableTiles/BreakableTile2" unique_id=997393240]
 libraries/ = SubResource("AnimationLibrary_apo5x")
@@ -3185,7 +3181,6 @@ position = Vector2(1040, 160)
 platformTexture = ExtResource("6_josfm")
 sprite = NodePath("Sprite2D")
 animator = NodePath("AnimationPlayer")
-returns = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BreakableTiles/BreakableTile3" unique_id=2143835510]
 libraries/ = SubResource("AnimationLibrary_apo5x")
