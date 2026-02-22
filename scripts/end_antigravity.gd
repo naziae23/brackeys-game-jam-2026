@@ -4,8 +4,8 @@ extends Area2D
 @onready var timerLabel = $"../HUD/timer"
 
 func _ready() -> void:
-	gravityModifier.active = true
-	timerLabel.visible = true
+	gravityModifier.active = false
+	timerLabel.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	gravityModifier.active = false

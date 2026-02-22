@@ -4,6 +4,8 @@
 
 [node name="Gravity_modifier" type="Node" unique_id=1334557714]
 script = ExtResource("1_7sy6a")
+active = true
+isOnTimer = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1187315117]
 
