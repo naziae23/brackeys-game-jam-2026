@@ -10,7 +10,6 @@ resource_local_to_scene = true
 
 [node name="BreakableTile" type="StaticBody2D" unique_id=1478527711]
 script = ExtResource("1_2qbxc")
-returns = null
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1721229565]
 shape = SubResource("RectangleShape2D_g2863")
