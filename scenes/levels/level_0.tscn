@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cis8xavab7r8" path="res://scripts/level_manager.gd" id="2_gj3kh"]
 [ext_resource type="PackedScene" uid="uid://bngb7q7nsk2f6" path="res://scenes/hud.tscn" id="3_myogd"]
 [ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="4_s4l03"]
-[ext_resource type="Script" uid="uid://cdwi2lwgwyw1m" path="res://scripts/hud.gd" id="4_ypncs"]
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="5_ypncs"]
 [ext_resource type="Texture2D" uid="uid://d2bd0wk0alcwn" path="res://assets/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="6_0qejo"]
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_erlbe"]
@@ -16,13 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cl4v8objt65r" path="res://scenes/breakable_tile.tscn" id="14_myogd"]
 [ext_resource type="PackedScene" uid="uid://oi8ouedgx1gg" path="res://scenes/meteor_shower.tscn" id="14_s4l03"]
 [ext_resource type="PackedScene" uid="uid://fbd4cndn36lf" path="res://scenes/key.tscn" id="15_myogd"]
-[ext_resource type="PackedScene" uid="uid://cob02qgpx3k83" path="res://scenes/gravity_modifier.tscn" id="16_s4l03"]
-[ext_resource type="PackedScene" uid="uid://bem7blxtwf71i" path="res://scenes/boss.tscn" id="18_0qejo"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_0qejo"]
-vertices = PackedVector2Array(2508.1016, -608.02344, 2516.8906, 254.92969, -241.57813, 237.0625, -206.39844, -613.96875)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-216, -624, 2518, -618, 2527, 265, -252, 247)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q7iv"]
 texture = ExtResource("4_s4l03")
@@ -1130,10 +1122,6 @@ script = ExtResource("1_1q7iv")
 script = ExtResource("2_gj3kh")
 
 [node name="HUD" parent="." unique_id=274211314 instance=ExtResource("3_myogd")]
-script = ExtResource("4_ypncs")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=278806511]
-navigation_polygon = SubResource("NavigationPolygon_0qejo")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=334168162]
 tile_set = SubResource("TileSet_lbhrr")
@@ -1155,17 +1143,6 @@ offset = Vector2(0, -40)
 zoom = Vector2(2.5, 2.5)
 limit_bottom = 250
 
-<<<<<<< HEAD
-[node name="Gravity_modifier" parent="Player" unique_id=1334557714 instance=ExtResource("16_s4l03")]
-isOnTimer = true
-
-[node name="Salman Khan" parent="." unique_id=552319097 node_paths=PackedStringArray("target_to_chase") instance=ExtResource("18_0qejo")]
-position = Vector2(-88, -341.99997)
-scale = Vector2(0.8, 0.8)
-target_to_chase = NodePath("../Player")
-
-=======
->>>>>>> 801e8bc03f8237465e6a5f706d8538447001cf58
 [node name="Background" parent="." unique_id=1092007916 instance=ExtResource("8_1q7iv")]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=19491929]
@@ -1224,7 +1201,6 @@ position = Vector2(-94, -24)
 platformTexture = SubResource("AtlasTexture_gj3kh")
 sprite = NodePath("Sprite2D")
 animator = NodePath("AnimationPlayer")
-returns = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BreakableTile" unique_id=118809480]
 libraries/ = SubResource("AnimationLibrary_0qejo")

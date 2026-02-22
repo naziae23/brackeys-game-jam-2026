@@ -1142,6 +1142,7 @@ day_number = 4
 [node name="Player" parent="." unique_id=854190572 instance=ExtResource("7_xt2o7")]
 position = Vector2(0, -7.9999995)
 has_dash = true
+has_glide = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=686437902]
 offset = Vector2(0, -40)
@@ -1150,8 +1151,6 @@ limit_bottom = 250
 position_smoothing_enabled = true
 
 [node name="Gravity_modifier" parent="Player" unique_id=1334557714 instance=ExtResource("8_beuva")]
-active = true
-isOnTimer = true
 timeInterval = 3.0
 duration = 4.0
 inverse_strength = 0.1
