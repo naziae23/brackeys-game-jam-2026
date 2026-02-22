@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d007ki7cbs4mf" path="res://scenes/player.tscn" id="7_xt2o7"]
 [ext_resource type="PackedScene" uid="uid://cob02qgpx3k83" path="res://scenes/gravity_modifier.tscn" id="8_beuva"]
 [ext_resource type="PackedScene" uid="uid://b3dk183ymh2w6" path="res://scenes/background.tscn" id="9_05se8"]
-[ext_resource type="Script" uid="uid://bxco7inbtoka4" path="res://scenes/levels/anti_gravity_boots.gd" id="9_ov8fk"]
+[ext_resource type="Script" uid="uid://bxco7inbtoka4" path="res://scripts/anti_gravity_boots.gd" id="9_ov8fk"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="10_12cdj"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="12_lc5pf"]
 [ext_resource type="PackedScene" uid="uid://wdehdf77r3ei" path="res://scenes/winzone_locked.tscn" id="12_pmra4"]
