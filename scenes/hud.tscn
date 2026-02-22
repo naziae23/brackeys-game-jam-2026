@@ -6,14 +6,14 @@
 
 [node name="HUD" type="CanvasLayer" unique_id=274211314]
 
-[node name="score" type="Label" parent="." unique_id=1727771400]
+[node name="day" type="Label" parent="." unique_id=1727771400]
 offset_left = 19.0
 offset_top = 17.0
 offset_right = 59.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_ahhtf")
-theme_override_font_sizes/font_size = 48
-text = "0"
+theme_override_font_sizes/font_size = 50
+text = "day 0"
 
 [node name="timer" type="Label" parent="." unique_id=1630888581]
 visible = false
