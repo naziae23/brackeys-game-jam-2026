@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-@onready var animationPlayer = $AnimationPlayer
+#@onready var animationPlayer = $AnimationPlayer
 #var rng = RandomNumberGenerator.new()
 
 @export var x: float = -5

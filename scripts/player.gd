@@ -130,7 +130,7 @@ func _update_dash_visuals() -> void:
 	else:
 		$GPUParticles2D.emitting = false
 
-func die(play_anim: bool = true) -> void:
+func die(_play_anim: bool = true) -> void:
 	if dead:
 		return
 	dead = true
