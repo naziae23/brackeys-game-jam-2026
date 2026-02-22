@@ -13,7 +13,7 @@ func _physics_process(delta):
 	
 	var current_speed = RAFTAAR
 	if distance_to_player < slowdown_radius:
-		current_speed = max(90.0, RAFTAAR * (distance_to_player / slowdown_radius))
+		current_speed = max(60.0, RAFTAAR * (distance_to_player / slowdown_radius))
 	var direction = global_position.direction_to(navigation_agent.get_next_path_position())
 	velocity = direction * current_speed
 	
