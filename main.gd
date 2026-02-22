@@ -8,9 +8,6 @@ const HIGHEST_LEVEL = 4
 @export var test_level: int = 0
 @export var debug_level_select: bool = false
 
-@export var test_level: int = 0
-@export var debug_level_select: bool = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_scene.scene_changed.connect(handle_scene_changed)
