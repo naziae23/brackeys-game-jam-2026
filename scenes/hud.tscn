@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bngb7q7nsk2f6"]
 
+[ext_resource type="Script" uid="uid://cdwi2lwgwyw1m" path="res://scripts/hud.gd" id="1_6fi6k"]
 [ext_resource type="FontFile" uid="uid://k81yvl8577dj" path="res://assets/Godot Tutorial/fonts/PixelOperator8-Bold.ttf" id="1_ahhtf"]
 [ext_resource type="FontFile" uid="uid://bxlysp4r2ewn2" path="res://assets/Godot Tutorial/fonts/PixelOperator8.ttf" id="2_oo0fn"]
 [ext_resource type="Script" uid="uid://ehmqhgy3reoy" path="res://scripts/timer.gd" id="3_5ysmq"]
 
 [node name="HUD" type="CanvasLayer" unique_id=274211314]
+script = ExtResource("1_6fi6k")
+day_number = 5
 
 [node name="day" type="Label" parent="." unique_id=1727771400]
 offset_left = 19.0

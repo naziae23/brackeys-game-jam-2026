@@ -5,6 +5,5 @@
 
 [node name="Main" type="Node" unique_id=1867795003]
 script = ExtResource("1_0wfyh")
-test_level = 4
 
 [node name="MainMenu" parent="." unique_id=877895871 instance=ExtResource("2_0wfyh")]

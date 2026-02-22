@@ -1,6 +1,6 @@
 extends Node
 
-const HIGHEST_LEVEL = 4
+const HIGHEST_LEVEL = 5
 
 @onready var current_scene = $MainMenu
 @onready var current_level = 0
@@ -32,7 +32,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 
 	match current_scene_name:
 		"MainMenu":
-			next_scene_name = "level_0"
+			next_scene_name = "level_5"
 		"Level":
 			next_scene_name = "win_screen"
 		"WinScreen":
