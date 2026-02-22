@@ -18,6 +18,8 @@ class_name breakable_tile extends StaticBody2D
 @export var breaking: String = "Breaking"
 @export var broken: String = "Broken"
 
+@export var returns: bool = false
+
 enum PlatformStates {
 	Normal,
 	Breaking,
@@ -37,7 +39,7 @@ func _ready() -> void:
 	resizeAreaToSprite()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (!Engine.is_editor_hint()):
 		match currentState:
 			PlatformStates.Breaking: 
@@ -55,8 +57,8 @@ func onAnimationFinished(currentAnimation: String):
 	if(currentAnimation == breaking):
 		currentState = PlatformStates.Broken
 	if(currentAnimation == broken):
-		#currentState = PlatformStates.Normal #Never comes back
-		pass
+		if returns:
+			currentState = PlatformStates.Normal 
 	
 func handlePlatformTrigger():
 	var _bodies = area_2d.get_overlapping_bodies()

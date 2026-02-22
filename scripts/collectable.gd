@@ -5,5 +5,5 @@ extends Area2D
 
 func _on_body_entered(_body: Node2D) -> void:
 	print("+1 point")
-	level_manager.add_point()
+	#level_manager.add_point()
 	animation_player.play("pickup")

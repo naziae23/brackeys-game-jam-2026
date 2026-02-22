@@ -28,6 +28,3 @@ func start_glitch_loop():
 		visible = true
 		await get_tree().create_timer(randf_range(0.3, 0.8)).timeout
 		visible = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
