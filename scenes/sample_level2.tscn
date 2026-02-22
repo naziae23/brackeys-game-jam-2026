@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cej6r1csl6hyi"]
 
-[ext_resource type="Script" uid="uid://cis8xavab7r8" path="res://scripts/game_manager.gd" id="1_j7dd6"]
+[ext_resource type="Script" uid="uid://cis8xavab7r8" path="res://scripts/level_manager.gd" id="1_j7dd6"]
 [ext_resource type="PackedScene" uid="uid://bngb7q7nsk2f6" path="res://scenes/hud.tscn" id="2_m7gel"]
 [ext_resource type="Texture2D" uid="uid://dwmcsrsxp4kx7" path="res://assets/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_tngvs"]
 [ext_resource type="Texture2D" uid="uid://cg1ah6ptyo2dj" path="res://assets/GandalfHardcore City Tiles/Decoration 32x32.png" id="4_spk6w"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="11_g16en"]
 [ext_resource type="PackedScene" uid="uid://dox5e8j2gni4j" path="res://scenes/collectable.tscn" id="12_h7bva"]
 [ext_resource type="PackedScene" uid="uid://bahcyaco31ija" path="res://scenes/windowsill.tscn" id="13_m7gel"]
-[ext_resource type="Script" uid="uid://brc6g8rg3rl5l" path="res://scripts/moving_ground_trigger.gd" id="13_spk6w"]
+[ext_resource type="Script" path="res://scripts/moving_ground_trigger.gd" id="13_spk6w"]
 [ext_resource type="PackedScene" uid="uid://b4m7tocuxtswg" path="res://scenes/moving_ground.tscn" id="14_tngvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]

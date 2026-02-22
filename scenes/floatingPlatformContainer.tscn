@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dol0p6ys1uuor"]
+
+[ext_resource type="Script" uid="uid://eqa7rxf4nvlx" path="res://scripts/floating_platform_container.gd" id="1_cy4td"]
+[ext_resource type="PackedScene" uid="uid://b4m7tocuxtswg" path="res://scenes/moving_ground.tscn" id="1_ltjsb"]
+[ext_resource type="Script" uid="uid://bk33jgori4v4i" path="res://scripts/floatingPlatformDetector.gd" id="1_vivkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltjsb"]
+size = Vector2(49, 9)
+
+[node name="floatingPlatformContainer" type="Node2D" unique_id=487055069]
+script = ExtResource("1_cy4td")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1107374123 node_paths=PackedStringArray("returnTimer", "cooldownTimer")]
+collision_mask = 2
+script = ExtResource("1_vivkb")
+returnTimer = NodePath("../returnTimer")
+cooldownTimer = NodePath("../cooldownTimer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955104928]
+position = Vector2(0.5, -13.5)
+shape = SubResource("RectangleShape2D_ltjsb")
+
+[node name="Platform" parent="." unique_id=1990888444 instance=ExtResource("1_ltjsb")]
+
+[node name="returnTimer" type="Timer" parent="." unique_id=422212227]
+wait_time = 3.0
+
+[node name="cooldownTimer" type="Timer" parent="." unique_id=1074583365]
+wait_time = 1.5
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="returnTimer" to="Area2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="cooldownTimer" to="Area2D" method="_on_cooldown_timer_timeout"]

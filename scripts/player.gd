@@ -56,6 +56,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor_coyote():
 		if !is_dashing and !can_dash:
 			can_dash = true
+	else:
+		is_jumping = true
 			
 	_update_dash_visuals()
 	if !is_dashing:
