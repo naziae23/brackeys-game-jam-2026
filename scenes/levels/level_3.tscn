@@ -1116,9 +1116,6 @@ distance = -346.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tv7cl"]
 normal = Vector2(0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgrx1"]
-size = Vector2(5.8919783, 32.56137)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_josfm"]
 size = Vector2(20, 40.331978)
 
@@ -1151,6 +1148,7 @@ limit_bottom = 250
 position_smoothing_enabled = true
 
 [node name="Gravity_modifier" parent="Player" unique_id=1334557714 instance=ExtResource("8_1nwmf")]
+active = true
 isOnTimer = true
 timeInterval = 3.0
 duration = 4.0
@@ -1220,18 +1218,10 @@ horizontal_alignment = 1
 autowrap_mode = 2
 script = null
 
-[node name="Glide_Tutorial" type="Area2D" parent="." unique_id=1087361490]
-position = Vector2(-29.13, -14.075)
-scale = Vector2(3.055, 3.055)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Glide_Tutorial" unique_id=1400074001]
-position = Vector2(0.042554855, -6.2806864)
-scale = Vector2(1.0000004, 1.0000004)
-shape = SubResource("RectangleShape2D_lgrx1")
-
 [node name="Start_Antigravity" type="Area2D" parent="." unique_id=1531788232]
 position = Vector2(120.47, -8.535)
 scale = Vector2(2.455, 2.455)
+collision_mask = 2
 script = ExtResource("15_lgrx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Antigravity" unique_id=1350255950]
