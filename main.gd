@@ -27,7 +27,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 
 	var next_scene_name
 
-	if "Level" == current_scene_name:
+	if "Level" == current_scene_name and context != "Death":
 		current_level = context.to_int()
 
 	match current_scene_name:
@@ -37,6 +37,7 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 			match context: 
 				"Death":
 					next_scene_name = "level_" + str(current_level)
+					
 				_:
 					next_scene_name = "win_screen"
 
