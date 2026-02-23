@@ -18,3 +18,7 @@ func lose_level():
 
 func _on_platform_on_enter() -> void:
 	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Restart"):
+		lose_level()
