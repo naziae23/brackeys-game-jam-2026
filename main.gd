@@ -67,4 +67,6 @@ func handle_scene_changed(current_scene_name: String, context: String) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("Debug"):
+		print_tree_pretty()
+		print(get_tree().current_scene)

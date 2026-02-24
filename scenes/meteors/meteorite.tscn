@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://dyqcbc7nvrnes"]
 
-[ext_resource type="Script" uid="uid://dskx6gujfnpsw" path="res://scripts/meteorite.gd" id="1_ghl35"]
-[ext_resource type="Texture2D" uid="uid://dbdpkts4rwu6i" path="res://assets/kenney_space-shooter-extension/PNG/Sprites X2/Meteors/spaceMeteors_003.png" id="2_ur1br"]
+[ext_resource type="Script" uid="uid://dskx6gujfnpsw" path="res://scripts/meteors/meteorite.gd" id="1_0q38g"]
+[ext_resource type="Texture2D" uid="uid://dbdpkts4rwu6i" path="res://assets/kenney_space-shooter-extension/PNG/Sprites X2/Meteors/spaceMeteors_003.png" id="2_ofe70"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdrwk"]
 radius = 20.22375
 
 [node name="Meteorite" type="Area2D" unique_id=2105505654]
 collision_mask = 2
-script = ExtResource("1_ghl35")
+script = ExtResource("1_0q38g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=674703531]
+z_index = 4
 scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_ur1br")
+texture = ExtResource("2_ofe70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734796710]
 scale = Vector2(0.75, 0.75)

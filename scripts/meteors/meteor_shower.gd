@@ -27,6 +27,5 @@ func _on_timer_timeout() -> void:
 	var meteor = prefab.instantiate()
 	meteor.level_manager = level_manager
 	meteor.vel = vel
-	
-	get_tree().current_scene.add_child(meteor)
+	add_child(meteor)
 	meteor.global_position = Vector2(spawn_x, spawn_y)
