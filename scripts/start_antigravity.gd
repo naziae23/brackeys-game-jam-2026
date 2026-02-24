@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	gravityModifier.active = true
+	gravityModifier.trigger_gravity_mod()
 	timerLabel.visible = true
 	# disable collision monitoring immediately
 	set_deferred("monitoring", false)
