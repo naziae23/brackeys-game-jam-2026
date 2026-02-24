@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://b3dk183ymh2w6" path="res://scenes/background.tscn" id="8_1q7iv"]
 [ext_resource type="PackedScene" uid="uid://c3dvbeh2vg01w" path="res://scenes/killzone.tscn" id="11_x58fq"]
 [ext_resource type="PackedScene" uid="uid://c4sctf2tdbm14" path="res://scenes/winzone.tscn" id="12_4mw86"]
-[ext_resource type="PackedScene" uid="uid://oi8ouedgx1gg" path="res://scenes/meteors/meteor_shower.tscn" id="12_vhkxn"]
 [ext_resource type="PackedScene" uid="uid://bahcyaco31ija" path="res://scenes/windowsill.tscn" id="13_myogd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q7iv"]
@@ -1119,6 +1118,3 @@ position = Vector2(320, -259)
 position = Vector2(192, -259)
 
 [node name="Labels" type="Node" parent="." unique_id=1375106149]
-
-[node name="Meteor Shower" parent="." unique_id=1746569243 instance=ExtResource("12_vhkxn")]
-frequency = 0.1
