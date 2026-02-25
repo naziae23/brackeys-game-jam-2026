@@ -218,3 +218,5 @@ frame_progress = 0.7662861
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=131047537]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1506577011]
